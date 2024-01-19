@@ -12,7 +12,7 @@ def get_user_body(first_name):
 
 # Función de prueba positiva
 def positive_assert(first_name):
-    # El cuerpo de la solicitud actualizada se guarda en la variable user_body
+    # El cuerpo actualizado de la solicitud se guarda en la variable user_body
     user_body = get_user_body(first_name)
     # El resultado de la solicitud para crear un nuevo usuario o usuaria se guarda en la variable response
     user_response = sender_stand_request.post_new_user(user_body)
@@ -34,7 +34,7 @@ def positive_assert(first_name):
 
 # Función de prueba negativa para los casos en los que la solicitud devuelve un error relacionado con caracteres
 def negative_assert_symbol(first_name):
-    # El cuerpo de la solicitud actualizada se guarda en la variable user_body
+    # El cuerpo actualizado de la solicitud se guarda en la variable user_body
     user_body = get_user_body(first_name)
 
     # El resultado se guarda en la variable response
@@ -102,14 +102,14 @@ def test_create_user_no_first_name_get_error_response():
 
 # Prueba 9. Error. El parámetro contiene un string vacío
 def test_create_user_empty_first_name_get_error_response():
-    # El cuerpo de la solicitud actualizada se guarda en la variable user_body
+    # El cuerpo actualizado de la solicitud se guarda en la variable user_body
     user_body = get_user_body("")
     # Comprueba la respuesta
     negative_assert_no_firstname(user_body)
 
 # Prueba 10. Error. El tipo del parámetro firstName: número
 def test_create_user_number_type_first_name_get_error_response():
-    # El cuerpo de la solicitud actualizada se guarda en la variable user_body
+    # El cuerpo actualizado de la solicitud se guarda en la variable user_body
     user_body = get_user_body(12)
     # El resultado de la solicitud para crear un nuevo usuario o usuaria se guarda en la variable response
     response = sender_stand_request.post_new_user(user_body)
